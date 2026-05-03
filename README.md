@@ -74,7 +74,9 @@ bash install.sh
 
 The installer copies 12 agent files and 2 command files into `~/.claude/{agents,commands}/`. **Existing files with the same names are backed up** to `~/.claude/backups/council-7-<timestamp>/` before being overwritten.
 
-No restart required either way — Claude Code picks up changes from `~/.claude/` dynamically. Confirm with:
+Slash commands appear in the autocomplete dynamically, **but a fresh Claude Code session is recommended after install** — the Agent tool's subagent registry is snapshotted at session start, so a session that was already running before install may not recognize the new agents (`/council` would report "agent not found"). Restart with `/exit` then re-launch.
+
+Confirm with:
 
 ```
 /council "test"        # should appear in slash command autocomplete
