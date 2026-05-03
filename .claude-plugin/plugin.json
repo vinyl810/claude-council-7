@@ -1,6 +1,6 @@
 {
   "name": "claude-council-7",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "7-member AI Council with isolated parallel agents to combat single-agent yes-man bias. Two modes: /council (analysis with 5 members + 2 rebuttal + synthesizer) and /council-plan (planning with 3 drafters + merger + contrarian + 2 verifiers + doc-writer).",
   "author": {
     "name": "vinyl810"
