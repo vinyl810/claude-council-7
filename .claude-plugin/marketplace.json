@@ -1,0 +1,29 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "vinyl810",
+  "description": "vinyl810's plugins for Claude Code",
+  "owner": {
+    "name": "vinyl810"
+  },
+  "plugins": [
+    {
+      "name": "claude-council-7",
+      "description": "7-member isolated AI Council with rebuttal stage. /council (analysis) and /council-plan (planning) modes — combats single-agent yes-man bias via isolated parallel agents.",
+      "version": "0.2.0",
+      "author": {
+        "name": "vinyl810"
+      },
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/vinyl810/claude-council-7",
+      "tags": [
+        "multi-agent",
+        "council",
+        "rebuttal",
+        "isolated-context",
+        "design-doc"
+      ]
+    }
+  ],
+  "version": "0.2.0"
+}

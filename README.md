@@ -51,6 +51,21 @@ This implementation adds two structural defenses beyond the basic pattern:
 
 Requires [Claude Code](https://docs.claude.com/claude-code) (CLI, IDE extension, or web).
 
+### Option A — Claude Code plugin (recommended)
+
+In any Claude Code session:
+
+```
+/plugin marketplace add vinyl810/claude-council-7
+/plugin install claude-council-7
+```
+
+Claude Code clones this repo into `~/.claude/plugins/cache/`, registers `/council` and `/council-plan` immediately, and tracks the install in `~/.claude/plugins/installed_plugins.json`.
+
+Update later with `/plugin update claude-council-7`. Remove with `/plugin uninstall claude-council-7`.
+
+### Option B — Manual install (forks / non-plugin users)
+
 ```bash
 git clone https://github.com/vinyl810/claude-council-7.git
 cd claude-council-7
@@ -59,7 +74,7 @@ bash install.sh
 
 The installer copies 12 agent files and 2 command files into `~/.claude/{agents,commands}/`. **Existing files with the same names are backed up** to `~/.claude/backups/council-7-<timestamp>/` before being overwritten.
 
-No restart required — Claude Code picks up changes from `~/.claude/` dynamically. Confirm with:
+No restart required either way — Claude Code picks up changes from `~/.claude/` dynamically. Confirm with:
 
 ```
 /council "test"        # should appear in slash command autocomplete
@@ -118,11 +133,19 @@ tools: Read, Grep, Glob, Bash, WebFetch
 System prompt body in markdown.
 ```
 
-Edit `~/.claude/agents/council-*.md` to tune persona, tools, or model. Changes are picked up on the next invocation — no reload needed.
+Edit `~/.claude/agents/council-*.md` (manual install) or the cached plugin path (`~/.claude/plugins/cache/vinyl810/claude-council-7/<version>/agents/`). Changes are picked up on the next invocation — no reload needed.
 
 To swap a council member, edit the orchestrator file (`council-orchestrator.md` or `council-plan-orchestrator.md`) — it lists which sub-agents to spawn at each stage.
 
 ## Uninstall
+
+### Plugin install
+
+```
+/plugin uninstall claude-council-7
+```
+
+### Manual install
 
 ```bash
 bash uninstall.sh
